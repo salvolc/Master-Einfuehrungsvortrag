@@ -1,0 +1,10 @@
+\frametitle{Next steps}
+\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}
+		\item MadGraph NLO testing
+		\item Include UFO model (TopFCNC) for FCNC processes
+		\item Reproduce production and decay channel analysis
+		\item Get samples with both processes in NLO and hope MadGraph calculates possible interference
+		\item Hope for progress and quick update, thanks for your attention
+	\end{itemize}
+\end{beamercolorbox}

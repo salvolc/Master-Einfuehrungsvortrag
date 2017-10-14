@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.28)  13 OCT 2016 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.28)  14 OCT 2017 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -819,7 +819,7 @@ Package pdftricks Warning: ****************************************
 (pdftricks)                [psTricks support in PDF (CVR, ACL)]
 (pdftricks)                ****************************************.
 
-runsystem(touch /tmp/w18-test-20161013963)...disabled (restricted).
+runsystem(touch /tmp/w18-test-20171014932)...disabled (restricted).
 
 
 Package pdftricks Warning: ****************************************
@@ -1673,7 +1673,32 @@ File: siunitx-version-1.cfg 2016/03/01 v2.6q siunitx: Version 1 settings
 (/home/salv/.local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen335
 )
-(./beamerouterthemeinfolines2.sty) (./build/Presentation.aux)
+(./beamerouterthemeinfolines2.sty)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 69.
+
+(./build/Presentation.aux)
 \openout1 = `build/Presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -3108,10 +3133,16 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 69.
 (/home/salv/.local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 71.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 71.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 71.
 
-<images/tud_logo_cmyk.pdf, id=133, 339.2675pt x 55.20625pt>
+<images/tud_logo_cmyk.pdf, id=37, 339.2675pt x 55.20625pt>
 File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
 
 <use images/tud_logo_cmyk.pdf>
@@ -3128,462 +3159,73 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!{/home/salv/.local/texlive/2015/texmf-var/fonts/map/pdf
 tex/updmap/pdftex.map} <./images/tud_logo_cmyk.pdf>]
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
+\openout4 = `build/Presentation.vrb'.
 
+ (./build/Presentation.vrb)
+File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
 <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 113.
+Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 102.
 (pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
  [2
 
-] (./tables/sm.tex)
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
+]
+\openout4 = `build/Presentation.vrb'.
 
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 127.
+ (./build/Presentation.vrb
+<images/tug-vertex.pdf, id=58, 85.99728pt x 104.7915pt>
+File: images/tug-vertex.pdf Graphic file (type pdf)
+
+<use images/tug-vertex.pdf>
+Package pdftex.def Info: images/tug-vertex.pdf used on input line 6.
+(pdftex.def)             Requested size: 98.62148pt x 120.17989pt.
+)
+File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
+ <use images/tud_logo_cmyk.pdf>
+Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 129.
 (pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
  [3
 
-]
-<images/feyngluonfusiontt.pdf, id=173, 117.22595pt x 82.90875pt>
-File: images/feyngluonfusiontt.pdf Graphic file (type pdf)
+ <./images/tug-vertex.pdf>]
+\openout4 = `build/Presentation.vrb'.
 
-<use images/feyngluonfusiontt.pdf>
-Package pdftex.def Info: images/feyngluonfusiontt.pdf used on input line 159.
-(pdftex.def)             Requested size: 98.62148pt x 69.7542pt.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 159.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 159.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 159.
+ (./build/Presentation.vrb
+<images/prod.pdf, id=83, 253.5332pt x 123.26352pt>
+File: images/prod.pdf Graphic file (type pdf)
+ <use images/prod.pdf>
+Package pdftex.def Info: images/prod.pdf used on input line 3.
+(pdftex.def)             Requested size: 205.46327pt x 99.89178pt.
 
-<images/feynst.pdf, id=174, 92.89204pt x 54.86899pt>
-File: images/feynst.pdf Graphic file (type pdf)
- <use images/feynst.pdf>
-Package pdftex.def Info: images/feynst.pdf used on input line 159.
-(pdftex.def)             Requested size: 98.62148pt x 58.25377pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
+<images/decay.pdf, id=84, 246.75688pt x 123.26352pt>
+File: images/decay.pdf Graphic file (type pdf)
+ <use images/decay.pdf>
+Package pdftex.def Info: images/decay.pdf used on input line 4.
+(pdftex.def)             Requested size: 205.46327pt x 102.63782pt.
+)
+[4
 
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 159.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [4
+ <./images/prod.pdf> <./images/decay.pdf>]
+\openout4 = `build/Presentation.vrb'.
 
- <./images/feyngluonfusiontt.pdf> <./images/feynst.pdf>]
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 185.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [5
+ (./build/Presentation.vrb)
+[5
 
 ]
-<images/BATLogo.png, id=213, 1179.40625pt x 831.105pt>
-File: images/BATLogo.png Graphic file (type png)
+\openout4 = `build/Presentation.vrb'.
 
-<use images/BATLogo.png>
-Package pdftex.def Info: images/BATLogo.png used on input line 224.
-(pdftex.def)             Requested size: 66.77231pt x 47.04883pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 224.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [6
-
- <./images/BATLogo.png (PNG copy)>]
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 254.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [7
+ (./build/Presentation.vrb) [6
 
 ]
-<images/feynstwt.pdf, id=230, 138.02164pt x 73.77261pt>
-File: images/feynstwt.pdf Graphic file (type pdf)
+\openout4 = `build/Presentation.vrb'.
 
-<use images/feynstwt.pdf>
-Package pdftex.def Info: images/feynstwt.pdf used on input line 273.
-(pdftex.def)             Requested size: 119.85445pt x 64.06456pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 273.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [8
-
- <./images/feynstwt.pdf>] (./tables/messwerte1.tex) (./tables/messwerte2.tex)
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
-
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 301.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [9
+ (./build/Presentation.vrb) [7
 
 ]
-<plots/EFT_1_nocorr.pdf, id=253, 569.12625pt x 489.83pt>
-File: plots/EFT_1_nocorr.pdf Graphic file (type pdf)
+\openout4 = `build/Presentation.vrb'.
 
-<use plots/EFT_1_nocorr.pdf>
-Package pdftex.def Info: plots/EFT_1_nocorr.pdf used on input line 323.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
 
-<plots/BLUE_1_nocorr.pdf, id=254, 569.12625pt x 489.83pt>
-File: plots/BLUE_1_nocorr.pdf Graphic file (type pdf)
-
-<use plots/BLUE_1_nocorr.pdf>
-Package pdftex.def Info: plots/BLUE_1_nocorr.pdf used on input line 323.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 323.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [10
-
- <./plots/EFT_1_nocorr.pdf, page is rotated 90 degrees> <./plots/BLUE_1_nocorr.
-pdf, page is rotated 90 degrees>] <plots/EFT_1_poscorr.pdf, id=348, 569.12625pt
- x 489.83pt>
-File: plots/EFT_1_poscorr.pdf Graphic file (type pdf)
-
-<use plots/EFT_1_poscorr.pdf>
-Package pdftex.def Info: plots/EFT_1_poscorr.pdf used on input line 346.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
-
-<plots/BLUE_1_poscorr.pdf, id=349, 569.12625pt x 489.83pt>
-File: plots/BLUE_1_poscorr.pdf Graphic file (type pdf)
-
-<use plots/BLUE_1_poscorr.pdf>
-Package pdftex.def Info: plots/BLUE_1_poscorr.pdf used on input line 346.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 346.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [11
-
- <./plots/EFT_1_poscorr.pdf, page is rotated 90 degrees> <./plots/BLUE_1_poscor
-r.pdf, page is rotated 90 degrees>]
-<plots/EFT_1_negcorr.pdf, id=444, 569.12625pt x 489.83pt>
-File: plots/EFT_1_negcorr.pdf Graphic file (type pdf)
-
-<use plots/EFT_1_negcorr.pdf>
-Package pdftex.def Info: plots/EFT_1_negcorr.pdf used on input line 369.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
-
-<plots/BLUE_1_negcorr.pdf, id=445, 569.12625pt x 489.83pt>
-File: plots/BLUE_1_negcorr.pdf Graphic file (type pdf)
-
-<use plots/BLUE_1_negcorr.pdf>
-Package pdftex.def Info: plots/BLUE_1_negcorr.pdf used on input line 369.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 369.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [12
-
- <./plots/EFT_1_negcorr.pdf, page is rotated 90 degrees> <./plots/BLUE_1_negcor
-r.pdf, page is rotated 90 degrees>] <plots/WORLDEFT.pdf, id=539, 569.12625pt x 
-489.83pt>
-File: plots/WORLDEFT.pdf Graphic file (type pdf)
-
-<use plots/WORLDEFT.pdf>
-Package pdftex.def Info: plots/WORLDEFT.pdf used on input line 394.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
- <plots/WORLDBLUE.pdf, id=540, 569.12625pt x 489.83pt>
-File: plots/WORLDBLUE.pdf Graphic file (type pdf)
-
-<use plots/WORLDBLUE.pdf>
-Package pdftex.def Info: plots/WORLDBLUE.pdf used on input line 394.
-(pdftex.def)             Requested size: 167.79518pt x 144.41638pt.
-
-Overfull \vbox (2.14809pt too high) detected at line 394
- []
-
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 394.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [13
-
- <./plots/WORLDEFT.pdf, page is rotated 90 degrees> <./plots/WORLDBLUE.pdf, pag
-e is rotated 90 degrees>]
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
-
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 409.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [14
+(./build/Presentation.vrb) [8
 
 ]
-<images/feyngluonfusiontt2.pdf, id=643, 131.03555pt x 73.5528pt>
-File: images/feyngluonfusiontt2.pdf Graphic file (type pdf)
-
-<use images/feyngluonfusiontt2.pdf>
-Package pdftex.def Info: images/feyngluonfusiontt2.pdf used on input line 467.
-(pdftex.def)             Requested size: 77.04741pt x 43.24873pt.
-
-<images/feyngluonfusionttu.pdf, id=644, 131.03555pt x 73.5528pt>
-File: images/feyngluonfusionttu.pdf Graphic file (type pdf)
-
-<use images/feyngluonfusionttu.pdf>
-Package pdftex.def Info: images/feyngluonfusionttu.pdf used on input line 467.
-(pdftex.def)             Requested size: 77.04741pt x 43.24873pt.
-
-<images/feynqqtt.pdf, id=645, 117.07239pt x 82.90875pt>
-File: images/feynqqtt.pdf Graphic file (type pdf)
-
-<use images/feynqqtt.pdf>
-Package pdftex.def Info: images/feynqqtt.pdf used on input line 467.
-(pdftex.def)             Requested size: 77.04741pt x 54.56433pt.
-File: images/feyngluonfusiontt.pdf Graphic file (type pdf)
- <use images/feyngluonfusiontt.pdf>
-Package pdftex.def Info: images/feyngluonfusiontt.pdf used on input line 467.
-(pdftex.def)             Requested size: 77.04741pt x 54.49475pt.
-File: images/feynst.pdf Graphic file (type pdf)
-
-<use images/feynst.pdf>
-Package pdftex.def Info: images/feynst.pdf used on input line 467.
-(pdftex.def)             Requested size: 85.60883pt x 50.56714pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 467.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [15
-
- <./images/feyngluonfusiontt2.pdf> <./images/feyngluonfusionttu.pdf> <./images/
-feynqqtt.pdf>]
-(./tables/model.tex)
-Overfull \hbox (1.70558pt too wide) in paragraph at lines 488--488
- [] 
- []
-
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 488.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [16
-
-] [17
-
-]
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 542.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
-
-[18
-
-] <plots/ttbar.pdf, id=706, 569.12625pt x 385.44pt>
-File: plots/ttbar.pdf Graphic file (type pdf)
- <use plots/ttbar.pdf>
-Package pdftex.def Info: plots/ttbar.pdf used on input line 568.
-(pdftex.def)             Requested size: 157.52254pt x 106.6815pt.
-
-<plots/ttbarfit.pdf, id=707, 569.12625pt x 385.44pt>
-File: plots/ttbarfit.pdf Graphic file (type pdf)
- <use plots/ttbarfit.pdf>
-Package pdftex.def Info: plots/ttbarfit.pdf used on input line 568.
-(pdftex.def)             Requested size: 157.52254pt x 106.6815pt.
-
-<plots/st.pdf, id=708, 569.12625pt x 385.44pt>
-File: plots/st.pdf Graphic file (type pdf)
- <use plots/st.pdf>
-Package pdftex.def Info: plots/st.pdf used on input line 568.
-(pdftex.def)             Requested size: 157.52254pt x 106.6815pt.
-
-<plots/stvtbfits.pdf, id=709, 569.12625pt x 385.44pt>
-File: plots/stvtbfits.pdf Graphic file (type pdf)
-
-<use plots/stvtbfits.pdf>
-Package pdftex.def Info: plots/stvtbfits.pdf used on input line 568.
-(pdftex.def)             Requested size: 157.52254pt x 106.6815pt.
-
-Overfull \vbox (9.5492pt too high) detected at line 568
- []
-
-[19
-
- <./plots/ttbar.pdf, page is rotated 90 degrees> <./plots/ttbarfit.pdf, page is
- rotated 90 degrees> <./plots/st.pdf, page is rotated 90 degrees> <./plots/stvt
-bfits.pdf, page is rotated 90 degrees>]
-File: plots/stvtbfits.pdf Graphic file (type pdf)
- <use plots/stvtbfits.pdf>
-Package pdftex.def Info: plots/stvtbfits.pdf used on input line 593.
-(pdftex.def)             Requested size: 184.57571pt x 125.00185pt.
-
-Overfull \hbox (16.78053pt too wide) in paragraph at lines 593--593
-[][] 
- []
-
-<plots/stvtbfitsnorm.pdf, id=891, 569.12625pt x 385.44pt>
-File: plots/stvtbfitsnorm.pdf Graphic file (type pdf)
-
-<use plots/stvtbfitsnorm.pdf>
-Package pdftex.def Info: plots/stvtbfitsnorm.pdf used on input line 593.
-(pdftex.def)             Requested size: 184.57571pt x 125.00185pt.
-
-Overfull \hbox (16.78053pt too wide) in paragraph at lines 593--593
-[][] 
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 593.
-
-Overfull \vbox (0.66975pt too high) detected at line 593
- []
-
-[20
-
- <./plots/stvtbfitsnorm.pdf, page is rotated 90 degrees>]
-<plots/resmt.pdf, id=942, 569.12625pt x 489.83pt>
-File: plots/resmt.pdf Graphic file (type pdf)
- <use plots/resmt.pdf>
-Package pdftex.def Info: plots/resmt.pdf used on input line 611.
-(pdftex.def)             Requested size: 184.57571pt x 158.85652pt.
-
-Overfull \hbox (16.78053pt too wide) in paragraph at lines 611--611
-[][] 
- []
-
-<plots/resvtb.pdf, id=943, 569.12625pt x 489.83pt>
-File: plots/resvtb.pdf Graphic file (type pdf)
- <use plots/resvtb.pdf>
-Package pdftex.def Info: plots/resvtb.pdf used on input line 611.
-(pdftex.def)             Requested size: 184.57571pt x 158.85652pt.
-
-Overfull \hbox (16.78053pt too wide) in paragraph at lines 611--611
-[][] 
- []
-
-[21
-
- <./plots/resmt.pdf> <./plots/resvtb.pdf
-
-pdfTeX warning: pdflatex (file ./plots/resvtb.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->]
-Overfull \hbox (6.39511pt too wide) detected at line 638
-\OT1/cmss/m/n/10.95 ^^@[] = [] [] [] \T1/phv/m/sl/10.95 m[] \OT1/cmss/m/n/10.95
- = [] []
- []
-
-<images/plotres.png, id=1115, 1123.19624pt x 968.61874pt>
-File: images/plotres.png Graphic file (type png)
-
-<use images/plotres.png>
-Package pdftex.def Info: images/plotres.png used on input line 638.
-(pdftex.def)             Requested size: 180.80522pt x 155.9133pt.
-
-Overfull \hbox (16.43774pt too wide) in paragraph at lines 638--638
- [] 
- []
-
-[22
-
- <./images/plotres.png (PNG copy)>]
-<plots/gammatPDF.pdf, id=1123, 569.12625pt x 489.83pt>
-File: plots/gammatPDF.pdf Graphic file (type pdf)
-
-<use plots/gammatPDF.pdf>
-Package pdftex.def Info: plots/gammatPDF.pdf used on input line 665.
-(pdftex.def)             Requested size: 147.24467pt x 126.73244pt.
-File: plots/resmt.pdf Graphic file (type pdf)
- <use plots/resmt.pdf>
-Package pdftex.def Info: plots/resmt.pdf used on input line 665.
-(pdftex.def)             Requested size: 147.24467pt x 126.73244pt.
-
-<plots/observables.pdf, id=1124, page=7, 569.12625pt x 355.3275pt>
-File: plots/observables.pdf Graphic file (type pdf)
-
-<use plots/observables.pdf, page 7>
-Package pdftex.def Info: plots/observables.pdf, page7 used on input line 665.
-(pdftex.def)             Requested size: 147.24467pt x 91.93295pt.
-
-Overfull \vbox (13.40279pt too high) detected at line 665
- []
-
-[23
-
- <./plots/gammatPDF.pdf, page is rotated 90 degrees> <./plots/observables.pdf, 
-page is rotated 90 degrees>]
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 686.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [24
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 699.
-
-\c@framenumberappendix=\count314
-<plots/observables.pdf, id=1226, page=1, 569.12625pt x 355.3275pt>
-File: plots/observables.pdf Graphic file (type pdf)
-
-<use plots/observables.pdf, page 1>
-Package pdftex.def Info: plots/observables.pdf, page1 used on input line 709.
-(pdftex.def)             Requested size: 273.9493pt x 171.04321pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 709.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [25
-
- <./plots/observables.pdf, page is rotated 90 degrees>]
-<plots/observables.pdf, id=1279, page=3, 569.12625pt x 355.3275pt>
-File: plots/observables.pdf Graphic file (type pdf)
-
-<use plots/observables.pdf, page 3>
-Package pdftex.def Info: plots/observables.pdf, page3 used on input line 726.
-(pdftex.def)             Requested size: 184.57571pt x 115.23607pt.
-
-Overfull \hbox (16.78053pt too wide) in paragraph at lines 726--726
- [] 
- []
-
-<plots/observables.pdf, id=1280, page=4, 569.12625pt x 355.3275pt>
-File: plots/observables.pdf Graphic file (type pdf)
-
-<use plots/observables.pdf, page 4>
-Package pdftex.def Info: plots/observables.pdf, page4 used on input line 726.
-(pdftex.def)             Requested size: 184.57571pt x 115.23607pt.
-
-Overfull \hbox (16.78053pt too wide) in paragraph at lines 726--726
- [] 
- []
-
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
-<use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 726.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [26
-
- <./plots/observables.pdf, page is rotated 90 degrees> <./plots/observables.pdf
-, page is rotated 90 degrees>]
-File: plots/observables.pdf Graphic file (type pdf)
-
-<use plots/observables.pdf, page 7>
-Package pdftex.def Info: plots/observables.pdf, page7 used on input line 734.
-(pdftex.def)             Requested size: 273.9493pt x 171.04321pt.
-File: images/tud_logo_cmyk.pdf Graphic file (type pdf)
- <use images/tud_logo_cmyk.pdf>
-Package pdftex.def Info: images/tud_logo_cmyk.pdf used on input line 734.
-(pdftex.def)             Requested size: 85.35826pt x 13.88913pt.
- [27
-
-]
-<plots/singletopcorrres.png, id=1339, 1099.10625pt x 949.5475pt>
-File: plots/singletopcorrres.png Graphic file (type png)
-
-<use plots/singletopcorrres.png>
-Package pdftex.def Info: plots/singletopcorrres.png used on input line 743.
-(pdftex.def)             Requested size: 239.70367pt x 207.07549pt.
-
-Overfull \vbox (2.69633pt too high) detected at line 743
- []
-
-[28
-
- <./plots/singletopcorrres.png (PNG copy)>]
 \tf@nav=\write8
 \openout8 = `build/Presentation.nav'.
 
@@ -3593,45 +3235,40 @@ Overfull \vbox (2.69633pt too high) detected at line 743
 \tf@snm=\write10
 \openout10 = `build/Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 747.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 747.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./build/Presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 747.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 747.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `build/Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 861F951057985670131FA4AE1C0B9D1D;1541.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 747.
+(rerunfilecheck)             Checksum: C9D97CA8091E8ED9E6ACA3AC668EB7DF;310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 31645 strings out of 493027
- 633422 string characters out of 6130911
- 742491 words of memory out of 5000000
- 34447 multiletter control sequences out of 15000+600000
- 62731 words of font info for 93 fonts, out of 8000000 for 9000
+ 31224 strings out of 493027
+ 626659 string characters out of 6130911
+ 726491 words of memory out of 5000000
+ 34139 multiletter control sequences out of 15000+600000
+ 50140 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,17n,100p,10384b,1541s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/salv/.local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-
-t1.enc}{/home/salv/.local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmss10.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmss8.pfb></home/salv/.local/texlive/2015/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></home/salv/.local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/salv/.local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/salv/.local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></home/salv/.local/te
-xlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></home/salv/.loc
-al/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></home/salv
-/.local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></home/salv
-/.local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></home/salv
-/.local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on build/Presentation.pdf (28 pages, 2595286 bytes).
+ 65i,17n,100p,10384b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/home/salv/.local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</home
+/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+2.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmss10.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmss8.pfb></home/salv/.local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></home/salv/.local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy6.pfb></home/salv/.local/texlive/2015/texmf-dis
+t/fonts/type1/urw/helvetic/uhvb8a.pfb></home/salv/.local/texlive/2015/texmf-dis
+t/fonts/type1/urw/helvetic/uhvr8a.pfb></home/salv/.local/texlive/2015/texmf-dis
+t/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on build/Presentation.pdf (8 pages, 119563 bytes).
 PDF statistics:
- 1416 PDF objects out of 1440 (max. 8388607)
- 842 compressed objects within 9 object streams
- 102 named destinations out of 1000 (max. 500000)
- 439 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
