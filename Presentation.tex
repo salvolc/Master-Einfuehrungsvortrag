@@ -1,0 +1,747 @@
+\documentclass{beamer}
+\usepackage{beamerthemesplit,graphicx,wrapfig, slashed, verbatim,hyperref,color,colortbl,tabularx}
+% \usepackage{graphicx,wrapfig, slashed, subfigure,verbatim,hyperref,color,colortbl,tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage{helvet} %font helvetica
+\usepackage{units}
+\usepackage{pdftricks}
+\usepackage{pstricks}
+\usepackage{beamerfoils}
+%\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ulem}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{feynmf}
+\usepackage{subcaption}
+%\usepackage{biblatex}
+\usepackage[
+  locale=DE,
+  separate-uncertainty=true,
+  decimalsymbol=.,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+\usepackage{multirow}
+
+% \usetheme{Hannover}
+\useoutertheme{infolines2}
+%\font\ttfAkkuratLightOffice AkkuratLightOffice-Regular at10pt
+\colorlet{structure}{green!50!black}
+\definecolor{tugreen}{RGB}{132,184,24}
+\definecolor{tugrey}{RGB}{178,179,182}
+\definecolor{tured}{RGB}{205,0,47}
+\setbeamercolor{palette primary}{bg=tugreen,fg=black}
+\setbeamercolor{palette secondary}{bg=tugrey!50!tugreen,fg=black}
+\setbeamercolor{palette quaternary}{fg=black, bg=tugrey}
+\setbeamercolor{caption name}{fg=tugreen}
+\setbeamercolor{palette tertiary}{fg=black,bg=tugrey}
+
+
+\setbeamercolor{palette compare}{bg=white!80!tugreen,fg=black}
+\setbeamercolor{palette misc}{bg=white!80!tugreen,fg=black}
+\setbeamercolor{palette white}{bg=white!99!black,fg=black}
+
+\setbeamercolor{itemize item}{fg=tugreen}
+\setbeamercolor{itemize subitem}{fg=tugreen}
+\setbeamercolor{itemize subsubitem}{fg=tugreen}
+\setbeamercolor{enumerate item}{fg=tugreen}
+\setbeamertemplate{itemize item}[square]
+\setbeamercolor{titlelike}{fg=tugreen, bg=white}
+
+
+\title{Constrains on the top quark width from cross section and branching ratio measurements using EFTfitter}
+
+
+\author{Salvatore La Cagnina}
+\institute[TU Dortmund]{
+\scriptsize Technische Universität Dortmund, Lehrstuhl EIV \\ 
+\vspace{0.5cm}
+}
+
+
+\date{\today}
+
+\MyLogo{\includegraphics[width=3cm]{images/tud_logo_cmyk.pdf}} 
+\setbeamertemplate{navigation symbols}{}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\section{SECTION}
+%\subsection{SUBSECTION}
+% \LogoOff
+%\begin{frame}[fragile]
+%\frametitle{FRAMETITLE}
+%\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+%One type of colorbox
+%\end{beamercolorbox}
+%\begin{beamercolorbox}[rounded=true,shadow=true]{palette quaternary}
+%Second type of colorbox
+%\end{beamercolorbox}
+%\end{frame}
+
+\section{General}
+\subsection{Structure}
+%\begin{frame}
+%	\frametitle{Topics} \vspace{-3mm}
+%	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+%		\begin{itemize}
+%			\item Main objective: calculate a pdf for the top quark width
+%			\item Build a model with observables, measurements and parameters
+%			\item Implement dependencies of the observables from the parameters
+%			\item Include measurements
+%			\item EFTfitter is used in order to implement that model and perform the calculation
+%		\end{itemize}\vspace{2mm}
+%	\end{beamercolorbox}
+%\end{frame}
+\begin{frame}
+	\frametitle{Content} \vspace{-3mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{itemize}
+			\item The Standard Model
+			\item Top quark measurements at LHC
+			\item Inference of model parameters in Bayesian analysis
+			\item Implementation of Bayesian analysis in EFTfitter
+			\item Combination of measurements with the BLUE method and the EFTfitter 
+			\item Constraining the top quark width using EFTfitter
+			\item Conclusion and Outlook
+		\end{itemize}\vspace{2mm}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{Standard}
+\subsection{Model}
+\begin{frame}
+	\frametitle{The Standard Model} \vspace{-3mm}
+	\input{tables/sm.tex}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{itemize}
+			\item Vector bosons as mediators of fundamental forces
+			\item Fermion mass increases per generation
+			\item Gravitation is not included
+		\end{itemize} \vspace{2mm}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{Top}
+\subsection{Quark}
+\begin{frame}
+	\vspace{-3mm}
+	\frametitle{The Top Quark} \vspace{-3mm}
+	\begin{minipage}{0.48\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\linewidth]{images/feyngluonfusiontt.pdf}
+		\caption{Example process for \texorpdfstring{$t\bar{t}$}a  production at the LHC.}
+		\end{figure}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.48\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\linewidth]{images/feynst.pdf}
+		\caption{Example process for single top production at the LHC.}
+		\end{figure}
+	\end{minipage}
+	\vspace{-5mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{itemize}
+			\item Up-type quark of third generation
+			\item Charge of $Q = \SI{2/3}{e}$
+			\item Lager mass then every other particle
+			\item Decays before hadronization
+			\item Can either be produced in pairs (strong interaction) or single (weak interaction)
+		\end{itemize} \vspace{2mm}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{Bayesian}
+\subsection{Analysis}
+\begin{frame}
+	\frametitle{Inference of model parameters}\vspace{-5mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{itemize}
+			%\item Physical Quantity $\vec{x}$
+			%\item Parameters $\vec{\lambda}$
+			\item A function $g(\vec{x}|\vec{\lambda},M)$ describes physical quantity $\vec{x}$ with parameters $\vec{\lambda}$ in a model $M$ 
+			\item Based on Bayes Theorem
+		\end{itemize}
+		\begin{equation*}
+		P(\vec{\lambda},M|\vec{D}) = \frac{P(\vec{D}|\vec{\lambda},M) \, P(\vec{\lambda},M)}{\int \! g(\vec{x}=\vec{D}|\vec{\lambda},M) P_i(\vec{\lambda},M)  d\vec{\lambda}} \, .
+		%\label{eqn:Bayes}
+		\end{equation*}
+		\begin{itemize}
+			\item $P(\vec{\lambda},M)$ prior probability distribution
+			\item Distribution of single parameter $\vec{\lambda}_i$ with
+		\end{itemize}
+		\begin{equation*}
+		P(\lambda_i|\vec{D}) = \int \prod_{i \neq j} P(\vec{\lambda}|\vec{D}) \, d\lambda_{j} \, .
+		%\label{eqn:Marginalized}
+		\end{equation*}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{The}
+\subsection{EFTfitter}
+\begin{frame}
+		\frametitle{The EFTfitter}
+		\vspace{-6mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette quaternary}
+		\begin{itemize}
+		\vspace{-3mm}
+		\item Based on BAT (Bayesian Analysis Toolkit) [1]
+		\item Individual model implementation
+		\item Generic tool for interpretation of measurements in context of EFT
+		\item Combines measurements comparable to BLUE method
+		\vspace{-1mm}
+		\end{itemize}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{minipage}[b]{0.80\textwidth}
+			Combination of measurements
+			\begin{itemize}
+			\item Observables $\vec{y}$ = Parameters $\vec{\lambda}$
+			\item N number of measurements, n number of observables,$\vec{D}_i$ single measurement
+			\item $U_{ik}$ unity if measurement matches with observable
+			\end{itemize}
+			\end{minipage}\vspace{-3mm}
+			\begin{equation*}
+				-2 \ln{(P(\vec{D}|\vec{\lambda}))} = \sum_{i=1}^{n} \, \sum_{j=1}^{n} \, \sum_{k=1}^{N} \, \sum_{l=1}^{N} \, [D_i - U_{ik} \lambda_k] \, M_{ij}^{-1} \, [D_j - U_{il} \lambda_l] \, ,
+			\label{eqn:min}
+			\end{equation*}\vspace{-3mm}
+		\hfill
+		\begin{minipage}[t]{0.15\textwidth} \vspace{-7.8cm} 
+			\hspace{-1cm}
+			\includegraphics[width=1.3\textwidth]{images/BATLogo.png}
+		\end{minipage}
+	\end{beamercolorbox}
+
+		[1] Caldwell, Kollár, Kröninger 2009
+		\vspace{-3mm}
+\end{frame}
+
+\section{BLUE}
+\subsection{Method}
+\begin{frame}
+\frametitle{Combination of measurements}
+\vspace{-5mm}
+\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}\vspace{-2mm}
+		\item BLUE = Best Linear Unbiassed Estimator Method\\
+		\hspace{3mm}(Lyons, Gibaut, Clifford 1988)
+		%$\bullet$ construct a combination $\hat{y}$ out of multiple mesurements\\
+		\item Build linear combination of single measurements $y_i$
+		\item Minimize variance by minimizing weighted sum $S$
+	\end{itemize}
+	\begin{equation*}
+		\hat{y} = \sum_i \alpha_i y_i \qquad S = \sum_i \sum_j (y' - y_i) E^{-1}_{ij} (y' - y_j)
+	\end{equation*}
+	\begin{itemize}\vspace{-3mm}
+		\item $E_{ij}$ = Error matrix, $S$ follows $\chi^2$ distribution
+	\end{itemize}
+\end{beamercolorbox}
+\begin{beamercolorbox}[rounded=true,shadow=true]{palette quaternary}
+	\begin{itemize}\vspace{-3mm}
+		\item In case of no correlation ($E_{ij}$ is diagonal)
+	\end{itemize}
+	\begin{equation*}
+		\hat{y} = \left(\sum_i \frac{y_i}{\sigma_i^2}\right) / \left(\sum_i \frac{1}{\sigma^2_i}\right) \qquad\frac{1}{\sigma^2} = \sum_i \frac{1}{\sigma^2_i}
+	\end{equation*}
+\end{beamercolorbox}
+\end{frame}
+
+\section{Comparison EFTfitter}
+\subsection{and BLUE method}
+\begin{frame}
+	\frametitle{The example: Single top + W boson cross section}\vspace{-2mm}
+	\begin{figure}
+		\includegraphics[width=0.35\textwidth]{images/feynstwt.pdf}
+		\caption{Example process for single top + W boson production.}
+	\end{figure}\vspace{-4mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}
+		\item  Example for BLUE for a combination of measurements
+		\item  Combination of measurements for the production of a top quark and a W boson in pp collisions at $\sqrt{s} = \SI{8}{\TeV}$ 
+		\item  Features two measurements, one from ATLAS and one from CMS
+		\item  Combines roughly 20 uncertainties
+		\item  From ATLAS-CONF-2014-052
+	\end{itemize}\vspace{2mm}
+\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}
+\frametitle{The measured cross sections}\vspace{-3mm}
+
+\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}\vspace{-2mm}
+\begin{itemize}
+	\item $\text{ATLAS} : \sigma_{tW} = \SI{27.20 \pm 6.35}{\pico\barn}$
+	\item $\text{CMS} : \sigma_{tW} = \SI{23.40 \pm 5.07}{\pico\barn}$
+	%\item ATLAS: $\sigma_{tW} = 27.2 \si{\pico\barn}$ and CMS: $\sigma_{tW} = 23.4 \si{\pico\barn}$
+	\item First comparison only statistical uncertainties
+	\item Tables with uncertainties (values in \si{\pico\barn}):
+\end{itemize}
+\end{beamercolorbox}
+
+\begin{table}[h]
+%\caption{Values of the uncertainties of the ATLAS and CMS measurement of the single top + W boson production including their correlation sorted by category.}
+\begin{minipage}[b]{0.48\textwidth}
+	\resizebox{\textwidth}{!}{
+	\input{tables/messwerte1.tex} }
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.51\textwidth}
+	\resizebox{\textwidth}{!}{
+	\input{tables/messwerte2.tex} }
+\end{minipage}
+\label{tab:ST}
+\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{figure}[h]
+	\centering
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/EFT_1_nocorr.pdf}
+		  \caption{Combined measurement using EFTfitter. Corresponding\\ value: $\sigma_{tW} = \SI{25.26 \pm 1.35}{\pico\barn}$}
+		\end{minipage}
+		%\hfill
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/BLUE_1_nocorr.pdf}
+		  \caption{Combined measurement using BLUE. Corresponding\\ value: $\sigma_{tW} = \SI{25.26 \pm 1.35}{\pico\barn}$}
+		\end{minipage}
+	\end{figure}\vspace{-2mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}\vspace{-2mm}
+		\begin{itemize}
+			\item No correlation between statistical uncertainties
+			\item Same result for both methods
+		\end{itemize}
+	\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}\vspace{-2mm}
+	\begin{figure}[h]
+	\centering
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/EFT_1_poscorr.pdf}\vspace{-2mm}
+		  \caption{Combined measurement using EFTfitter. Corresponding\\ value: $\sigma_{tW} = \SI{24.59 \pm 1.89}{\pico\barn}$}
+		\end{minipage}
+		%\hfill
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/BLUE_1_poscorr.pdf}\vspace{-2mm}
+		  \caption{Combined measurement using BLUE. Corresponding\\ value: $\sigma_{tW} = \SI{24.59 \pm 1.89}{\pico\barn}$}
+		\end{minipage}
+	\end{figure}\vspace{-2mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}\vspace{-2mm}
+		\begin{itemize}
+			\item High positive correlation between statistical uncertainties
+			%\item Same result for both methods
+			\item Both methods behave the same/intended way, uncertainty grows with higher positive correlation
+		\end{itemize}
+	\end{beamercolorbox}
+\end{frame}
+
+\begin{frame}
+	\frametitle{}\vspace{-2mm}
+	\begin{figure}[h]
+	\centering
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/EFT_1_negcorr.pdf}\vspace{-2mm}
+		  \caption{Combined measurement using EFTfitter. Corresponding\\ value: $\sigma_{tW} = \SI{25.28 \pm 0.30}{\pico\barn}$}
+		\end{minipage}
+		%\hfill
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/BLUE_1_negcorr.pdf}\vspace{-2mm}
+		  \caption{Combined measurement using BLUE. Corresponding\\ value: $\sigma_{tW} = \SI{25.28 \pm 0.30}{\pico\barn}$}
+		\end{minipage}
+	\end{figure}\vspace{-2mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}\vspace{-2mm}
+		\begin{itemize}
+			\item High negative correlation between statistical uncertainties
+			%\item Same result for both methods
+			\item Both methods behave the same/intended way, uncertainty lowers with higher negative correlation
+		\end{itemize}
+	\end{beamercolorbox}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{}\vspace{-2mm}
+	\begin{figure}[h]
+	\centering
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/WORLDEFT.pdf}\vspace{-4mm}
+		  \caption{Combined measurement using EFTfitter. Corresponding\\ value: $\sigma_{tW} = \SI{24.64 \pm 4.61}{\pico\barn}$}
+		\end{minipage}
+		%\hfill
+		\begin{minipage}[b]{.49\textwidth}
+		  \includegraphics[width=1\textwidth]{plots/WORLDBLUE.pdf}\vspace{-4mm}
+		  \caption{Combined measurement using BLUE. Corresponding\\ value: $\sigma_{tW} = \SI{24.64 \pm 4.61}{\pico\barn}$}
+		\end{minipage}
+	\end{figure}\vspace{-2mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}\vspace{-3mm}
+		\begin{itemize}
+			\item All 20 uncertainties included with according correlations
+			%\item Same result for both methods
+			\item Equal result for both methods even with multiple uncertainties
+			\item High confidence in the EFTfitter as tool for combination of measurements
+		\end{itemize}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{Constraining the}
+\subsection{top quark width}
+\begin{frame}
+	\frametitle{Procedure for constraining the top quark width} \vspace{-3mm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{itemize}
+			\item Main objective: calculate a pdf for the top quark width
+			\item Build a model with observables, measurements and parameters
+			\item Implement dependencies of the observables from the parameters
+			\item Include measurements
+			\item EFTfitter is used in order to implement that model and perform the calculation
+		\end{itemize}\vspace{2mm}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{Used}
+\subsection{Observables}
+\begin{frame}
+	\begin{minipage}{0.48\textwidth}
+	%\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+		\begin{itemize}
+			\item Cross section of $t\bar{t}$ production $\sigma_{t\bar{t}}$
+			\item Cross section of single top production in the t channel $\sigma_{st}$
+			\item Branching ratio \texorpdfstring{${BR (t \rightarrow W+b)}$}~
+		\end{itemize}
+	%\end{beamercolorbox}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.50\textwidth}
+		\frametitle{The observables}
+		\vspace{-1cm}
+		\begin{figure}[h]
+			\centering
+			\begin{subfigure}{.45\textwidth}
+			  \centering
+			  \includegraphics[width=\linewidth]{images/feyngluonfusiontt2.pdf}
+			  %\caption{~\texorpdfstring{$gg \rightarrow t\bar{t} \,$}a  in the t-channel.}
+			  \label{fig:ggttt}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+			  \centering
+			  \includegraphics[width=\linewidth]{images/feyngluonfusionttu.pdf}
+			  %\caption{~\texorpdfstring{$gg \rightarrow t\bar{t} \,$}a  in the u-channel.}
+			  \label{fig:ggttu}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+			  \centering
+			  \includegraphics[width=\linewidth]{images/feynqqtt.pdf}
+			  %\caption{~\texorpdfstring{$q\bar{q} \rightarrow t\bar{t} \, $}a  in the s-channel.}
+			  \label{fig:qqtt}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+			  \centering
+			  \includegraphics[width=\linewidth]{images/feyngluonfusiontt.pdf}
+			  %\caption{~\texorpdfstring{$gg \rightarrow t\bar{t} \, $}a  in the s-channel.}
+			  \label{fig:ggtts}
+			\end{subfigure}
+			\caption{Example processes for \texorpdfstring{$t\bar{t}$}a  production.}
+			\label{fig::ttbar}
+		\end{figure}
+		\vspace{-1cm}
+		\begin{figure}[h]
+		\centering
+			%\begin{subfigure}{.45\textwidth}
+			  \centering
+			  \includegraphics[width=.5\linewidth]{images/feynst.pdf}
+			  \caption{Single top production in the t-channel.}
+			  \label{fig:stt}
+			%\end{subfigure}
+		\end{figure}
+	\end{minipage}
+\end{frame}
+
+\section{The}
+\subsection{Model}
+\begin{frame}
+\vspace{-1.3cm}
+	\frametitle{Overview of the model}
+	\begin{table}
+		\resizebox{!}{0.11\textwidth}{
+		\input{tables/model.tex}}
+	\end{table}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}
+		\item $\Gamma_t$ is added as observable even though no direct measurement will be included 
+		\item Relation of $\Gamma_t$ and the top quark pole mass $m_t$:
+	\end{itemize}
+	\begin{equation*}
+		\Gamma = \frac{G_F \, m_t^3}{8 \, \pi \, \sqrt{2}} \left(1 - \frac{M_W^2}{m_t^2} \right)^2 \left(1 + 2 \frac{M_W^2}{m_t^2} \right) \left[1 - \frac{2 \, \alpha_s}{3 \, \pi} \left( \frac{2 \, \pi^2}{3} - \frac{5}{2} \right) \right]
+		\label{eqn:gamma}
+	\end{equation*}
+	\end{beamercolorbox}
+\end{frame}
+
+\section{Measurements of}
+\subsection{the observables}
+\LogoOff
+\begin{frame}
+\frametitle{The measurements}
+\vspace{-0.2cm}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}
+		\item Measurement for $\sigma_{t\bar{t}}$ from an ATLAS measurement at $\sqrt{s}=\SI{8}{TeV}$:
+		\begin{equation*}
+			\sigma_{t\bar{t}} = 242.4 \pm 1.7 \, \text{(stat)} \, \pm 10.2 \, \text{(syst)} \, \si{\pico\barn}
+		\end{equation*}
+		\item The measurement of the inclusive single top quark production cross section in the t-channel from a CMS measurement:
+		\begin{equation*}
+			\sigma_{st} = 83.6 \pm 2.3 \, \text{(stat)} \, \pm 7.4 \, \text{(syst)} \, \si{\pico\barn}
+		\end{equation*}
+		\item The measurement of \texorpdfstring{$BR~(t~\rightarrow$~W+b)}~ from a CMS measurement:
+		\begin{equation*}
+			\text{\texorpdfstring{$BR (t \rightarrow$ W+b)}~} = 1.014 \pm 0.003 \, \text{(stat)} \, \pm 0.032 \, \text{(syst)}
+		\end{equation*}
+		\item Due to $|V_{tb}| < 1$ an upper limit from that measurement is used:
+		\begin{equation*}
+			\text{\texorpdfstring{$BR (t \rightarrow$ W+b)}~} = 1.0 + 0.0 - 0.025
+		\end{equation*}
+	\end{itemize}
+	\vspace{-0.2cm}
+	\end{beamercolorbox}
+\end{frame}
+\LogoOn
+
+\section{Model}
+\subsection{Implementation}
+\begin{frame}
+\frametitle{Implementation to EFTfitter}
+\vspace{-0.8cm}
+\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}
+		\item Calculation of \texorpdfstring{$BR (t \rightarrow$ W+b)}~ straightforward:
+		\begin{equation*}
+			\text{\texorpdfstring{$BR (t \rightarrow$ W+b)}~} = \frac{\Gamma(\text{\texorpdfstring{$t \rightarrow$ W+b}~)}}{\Gamma(\text{\texorpdfstring{$t \rightarrow$ W+q}~)}} = |V_{tb}|^2
+		\end{equation*}
+		\item Calculation of the cross sections with HATHOR (tool to calculate cross section of top quark processes)
+		\item HATHOR used with CT10NLO PDF and $\sqrt{s}=\SI{8}{TeV}$
+		\item Parameters set to 
+		\vspace{-0.3cm}
+		\begin{equation*}
+		\SI{150}{GeV} < m_t < \SI{200}{GeV} \quad \text{and} \quad |V_{tb}| = \SI{0.55}{}, \SI{0.77}{}, \SI{0.99}{}
+		\end{equation*}
+		%\vspace{-0.3cm}
+		\item Extract dependency of $|V_{tb}|$ from $\sigma_{st}$ by analyzing $\sigma_{st}$ for the three $|V_{tb}|$ values
+	\end{itemize}
+\end{beamercolorbox}
+\end{frame}
+
+\LogoOff
+\begin{frame}
+\frametitle{HATHOR implementation}
+\vspace{-0.4cm}
+	\begin{itemize}
+		\item Due to computation time HATHOR included as polynomial fit
+	\end{itemize}
+	\vspace{-0.35cm}
+	\begin{figure}
+		\begin{subfigure}{0.46\textwidth}
+		\includegraphics[width=\linewidth]{plots/ttbar.pdf}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.46\textwidth}
+		\includegraphics[width=\linewidth]{plots/ttbarfit.pdf}
+		\end{subfigure}
+		\begin{subfigure}{0.46\textwidth}
+		\includegraphics[width=\linewidth]{plots/st.pdf}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.46\textwidth}
+		\includegraphics[width=\linewidth]{plots/stvtbfits.pdf}
+		\end{subfigure}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{$|V_{tb}|$ extraction}
+	%\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}\vspace{-2mm}
+		\begin{itemize}
+			\item Assuming the dependency of $|V_{tb}|$ is quadratic the following extraction is useful
+			\begin{equation*}
+			\sigma_{st}(m_t,|V_{tb}|) = |V_{tb}|^2 \, \sigma_{st}(m_t)
+			\end{equation*}
+			\item $\sigma_{st}(m_t)$ follows from mean of "nomalized" distributions (normalized to $|V_{tb}|=1$)
+		\end{itemize}
+	%\end{beamercolorbox}\vspace{-2mm}
+	\vspace{-0.2cm}
+	\begin{figure}
+			\begin{subfigure}{0.49\textwidth}
+			\includegraphics[width=1.1\linewidth]{plots/stvtbfits.pdf}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.49\textwidth}
+			\includegraphics[width=1.1\linewidth]{plots/stvtbfitsnorm.pdf}
+			\end{subfigure}
+		\end{figure}
+\end{frame}
+
+\section{The}
+\subsection{Results}
+\begin{frame}
+\frametitle{The results}
+	\begin{itemize}
+		\item Providing the model and measurements to the EFTfitter it provides the posterior probabilities
+	\end{itemize}
+	\begin{figure}
+			\begin{subfigure}{0.49\textwidth}
+			\includegraphics[width=1.1\linewidth]{plots/resmt.pdf}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.49\textwidth}
+			\includegraphics[width=1.1\linewidth]{plots/resvtb.pdf}
+			\end{subfigure}
+		\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\begin{itemize}
+		\item Comparison between global mode (GM) and world combination (WC) values of the top quark width 
+		\begin{equation*}
+			\Gamma_t^{GM} = \SI{1.335 \pm 0.040}{GeV} \quad \text{with} \quad  m_t^{GM} = \SI{172.707 \pm 1.554}{GeV}
+		\end{equation*}
+		\begin{equation*}
+			\Gamma_t^{WC} = \SI{1.352 \pm 0.020}{GeV} \quad \text{with} \quad m_t^{WC} = \SI{173.34 \pm 0.76}{GeV}
+		\end{equation*}
+	\end{itemize}
+	\begin{minipage}{0.48\textwidth}
+	\begin{itemize}
+		\item 2D distribution of the parameters
+		\item Top quark width PDF can be calculated from $m_t$ PDF
+	\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.48\textwidth}
+	\begin{figure}
+		\centering
+		%\includegraphics[page=3,width=\linewidth]{plots/result_plots.pdf}
+		\includegraphics[page=3,width=1.1\linewidth]{images/plotres.png}
+	\end{figure}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}
+	\begin{minipage}{0.43\textwidth}
+		\begin{itemize}
+			\item Similarity in shape of $m_t$ and $\Gamma_t$ PDF
+			\item Follows from linear dependency visible in plot below
+		\end{itemize}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.43\textwidth}
+		\begin{figure}
+			\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{plots/gammatPDF.pdf}
+			\end{subfigure}
+		\end{figure}
+	\end{minipage}
+	\vspace{-0.3cm}
+	\begin{figure}
+			\begin{subfigure}{0.43\textwidth}
+			\includegraphics[width=\linewidth]{plots/resmt.pdf}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.43\textwidth}
+			\includegraphics[page=7,width=\linewidth]{plots/observables.pdf}
+			\end{subfigure}
+		\end{figure}
+\end{frame}
+\LogoOn
+
+\section{The}
+\subsection{End}
+\begin{frame}
+\frametitle{Conclusions}
+	\begin{beamercolorbox}[rounded=true,shadow=true]{palette misc}
+	\begin{itemize}
+		\item Combination of measurements works reliably
+		\item Global mode values agree within one standard deviation
+		\item Resulting plots fit expectations
+		\item Possible next steps
+		\begin{itemize}
+			\item Expand the model with more observables
+			\item Add more (also multiple of the same) measurements
+			\item Create a "global fit" on physical quantities that cannot be measured directly
+		\end{itemize}
+		\item Thanks for your attention
+	\end{itemize}
+	\end{beamercolorbox}
+\end{frame}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\appendix
+\backupbegin
+\section{Appendix}
+\subsection{}
+
+\begin{frame}
+\frametitle{Observables}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth,page=1]{plots/observables.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Observables}
+\begin{minipage}{0.49\textwidth}
+	\begin{figure}
+
+		\includegraphics[width=1.1\textwidth,page=3]{plots/observables.pdf}
+	\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+	\begin{figure}
+
+		\includegraphics[width=1.1\textwidth,page=4]{plots/observables.pdf}
+	\end{figure}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Observables}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth,page=7]{plots/observables.pdf}
+	\end{figure}
+\end{frame}
+
+\LogoOff
+\begin{frame}
+\frametitle{Single top measurement correlation}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\textwidth]{plots/singletopcorrres.png}
+	\end{figure}
+\end{frame}
+\LogoOn
+
+\backupend
+\end{document}
